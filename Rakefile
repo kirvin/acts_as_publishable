@@ -1,4 +1,4 @@
-require 'rake/rdoctask'
+require 'rdoc/task'
 require 'bundler'
 require 'rspec/core/rake_task'
 
