@@ -12,7 +12,7 @@ module ActsAsPublishable
       end  
 
       def self.next_migration_number(dirname)
-        Time.now.strftime("%Y%m%d%H%M%S%6N")
+        Time.now.strftime("%Y%m%d%H%M%S")
       end
 
       def create_migration
