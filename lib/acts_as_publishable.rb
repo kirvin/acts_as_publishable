@@ -12,13 +12,13 @@ module Acts
       module ClassMethods
         def acts_as_publishable(*args)
           unless args.include?(:draft) && args.include?(:live)
-            raise "you must specify :draft and :live in list of publish_states for acts_as_publishable"
+            raise "you must specify :draft and :live in the list of publish_states for acts_as_publishable"
           end
 
           cattr_accessor :publish_states
           self.publish_states = args.collect{|state| state.to_s.downcase.to_sym }
           include InstanceMethods
-          
+
           scope :live, where(:published_as => 'live')
           scope :draft, where(:published_as => 'draft')
           default_scope live
@@ -79,3 +79,5 @@ module Acts
     end
   end
 end
+
+ActiveRecord::Base.send(:include, Acts::As::Publishable)
