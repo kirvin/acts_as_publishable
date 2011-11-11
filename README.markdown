@@ -4,6 +4,10 @@ This gem is derived from the acts_as_publishable plugin in [bborn's communityeng
 
 It allows an ActiveRecord model to move through publishing stages (draft, live, deleted, etc.).
 
+# WARNING
+
+This gem is not complete yet--I have used it successfully in a project, but incorporate at your own risk.  If you do try it, feel free to file reports for any bugs you encounter.
+
 ## Installation
 
 1.  Add the gem to your Gemfile:
