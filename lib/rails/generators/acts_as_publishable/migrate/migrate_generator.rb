@@ -27,7 +27,7 @@ module ActsAsPublishable
         begin
           @table_name = model_name.to_s.downcase.pluralize
           @target_class = model_name.to_s.capitalize
-          dest = "db/migrate/add_publishable_columns_to_#{model_name.downcase}.rb"
+          dest = "db/migrate/add_publishable_columns_to_#{model_name.downcase.pluralize}.rb"
           #puts " - write migration file to #{dest}"
           migration_template("publishable_columns.rb", dest)
         rescue Exception => ex
